@@ -16,6 +16,15 @@ def run_poem_game():
     poem_lines = []
     
     while remaining_players:
+        os.system('cls' if os.name == 'nt' else 'clear')
+        print("--- Current Poem ---")
+        if poem_lines:
+            for line in poem_lines:
+                print(f"  {line}")
+        else:
+            print("  [Poem is empty. Time to start!]")
+        print("-" * 20)
+        
         current_player = random.choice(remaining_players)
         remaining_players.remove(current_player)
         
